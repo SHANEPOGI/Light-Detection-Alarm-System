@@ -1,1 +1,24 @@
+@startuml
+title Observer Pattern - Light Detection System
+
+interface Observer {
+  +update(lightValue : int) : void
+}
+
+class LightSensor {
+  -lightValue : int
+  -observers : List<Observer>
+  +attach(o : Observer) : void
+  +detach(o : Observer) : void
+  +notify() : void
+}
+
+class AlarmSystem {
+  +update(lightValue : int) : void
+}
+
+Observer <|.. AlarmSystem
+LightSensor --> Observer : notifies
+
+@enduml
 
