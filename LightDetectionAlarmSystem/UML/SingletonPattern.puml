@@ -1,1 +1,14 @@
+@startuml
+title Singleton Pattern - AlarmSystem
+
+class AlarmSystem {
+  -instance : AlarmSystem
+  -threshold : int
+  +getInstance() : AlarmSystem
+  +triggerAlarm() : void
+}
+
+AlarmSystem : <<Singleton>>
+
+@enduml
 
